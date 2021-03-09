@@ -1,26 +1,27 @@
 import React from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import Auth from "../routes/Auth";
-import EditProfile from "../routes/EditProfile";
 import Home from "../routes/Home";
 import Profile from "../routes/Profile";
+import Navigation from "./Navigation";
 
-const AppRouter = ({ isLoggedIn }) => {
-    console.log(isLoggedIn)
+const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
     return (
         <Router>
+            {isLoggedIn && <Navigation userObj={userObj} />}
             <Switch>
                 {isLoggedIn
                     ? (
                         <>
-                            <Route exact path="/"><Home /></Route>
-                            <Route path="profile"><Profile /></Route>
-                            <Route path="editProfile"><EditProfile /></Route>
-
+                            {/* userObj를 App.js에서 부터 전달해오고있음 */}
+                            <Route exact path="/"><Home userObj={userObj} /></Route>
+                            <Route exact path="/profile"><Profile userObj={userObj} refreshUser={refreshUser} /></Route>
                         </>
                     )
                     : (
-                        <Route exact path="/"><Auth /></Route>
+                        <>
+                            <Route exact path="/"><Auth /></Route>
+                        </>
                     )
                 }
 
