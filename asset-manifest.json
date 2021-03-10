@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/hankevin0618/nwitter-twohands/static/css/main.d4508de4.chunk.css",
+    "main.js": "/hankevin0618/nwitter-twohands/static/js/main.9339419b.chunk.js",
+    "main.js.map": "/hankevin0618/nwitter-twohands/static/js/main.9339419b.chunk.js.map",
+    "runtime-main.js": "/hankevin0618/nwitter-twohands/static/js/runtime-main.df743a74.js",
+    "runtime-main.js.map": "/hankevin0618/nwitter-twohands/static/js/runtime-main.df743a74.js.map",
+    "static/js/2.00ec69a4.chunk.js": "/hankevin0618/nwitter-twohands/static/js/2.00ec69a4.chunk.js",
+    "static/js/2.00ec69a4.chunk.js.map": "/hankevin0618/nwitter-twohands/static/js/2.00ec69a4.chunk.js.map",
+    "index.html": "/hankevin0618/nwitter-twohands/index.html",
+    "static/css/main.d4508de4.chunk.css.map": "/hankevin0618/nwitter-twohands/static/css/main.d4508de4.chunk.css.map",
+    "static/js/2.00ec69a4.chunk.js.LICENSE.txt": "/hankevin0618/nwitter-twohands/static/js/2.00ec69a4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.df743a74.js",
+    "static/js/2.00ec69a4.chunk.js",
+    "static/css/main.d4508de4.chunk.css",
+    "static/js/main.9339419b.chunk.js"
+  ]
+}
