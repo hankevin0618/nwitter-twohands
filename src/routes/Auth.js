@@ -1,37 +1,13 @@
+import AuthForm from "components/AuthForm";
 import { authService, firebaseInstance } from "myBase";
 import React, { useState } from "react";
 
 const Auth = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+
     const [newAccount, setNewAccount] = useState(true);
     const [error, setError] = useState("");
     const toggleAccount = () => setNewAccount((prev) => !prev)
-    const onChange = (event) => {
-        const { target: { name, value } } = event //deconstructing
-        if (name === "email") {
-            setEmail(value)
-        } else if (name === "password") {
-            setPassword(value)
-        }
-    }
-    const onSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            let data;
-            if (newAccount) {
-                // create account
-                data = await authService.createUserWithEmailAndPassword(email, password) // use await because it says Promise
 
-            } else {
-                // log in account
-                data = await authService.signInWithEmailAndPassword(email, password);
-            }
-            // console.log(data)
-        } catch (error) {
-            setError(error.message)
-        }
-    }
 
     const onSocialClick = async (event) => {
         const { target: { name } } = event;
@@ -51,11 +27,7 @@ const Auth = () => {
 
     return (
         <div>
-            <form onSubmit={onSubmit}>
-                <input name="email" type="text" onChange={onChange} placeholder="Email" required value={email} />
-                <input name="password" type="password" onChange={onChange} placeholder="Password" required value={password} />
-                <input type="submit" value={newAccount ? "Create Account" : "Log In"} />
-            </form>
+            <AuthForm newAccount={newAccount} setError={setError} />
             <div>
                 <button onClick={onSocialClick} name="google">Continue with Google</button>
                 <button onClick={onSocialClick} name="github">Continue with GitHub</button>
